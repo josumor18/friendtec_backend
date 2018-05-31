@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #     namespace 'v1' do
   #       #resources :users
          post 'users/login', to: 'users#login'
-  #       post 'users/login_token', to: 'users#login_token'
+         post 'users/login_token', to: 'users#login_token'
   #       post 'users/login_facebook', to: 'users#login_facebook'
   #       post 'users/register', to: 'users#register'
   #       get 'emisoras/index', to: 'emisoras#index'
