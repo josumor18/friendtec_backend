@@ -25,11 +25,24 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.avatar = params[:file] # Assign a file like this, or
+
+    # like this
+    File.open('C:/Users/JosueAndroid/Pictures/Fluxme_images/tab_gps_sel.png') do |f|
+      @user.avatar = f
+    end
+
+    @user.save!
+    @user.avatar.url # => '/url/to/file.png'
+    @user.avatar.current_path # => 'path/to/file.png'
+    @user.avatar_identifier # => 'file.png'
 
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        #C:\Users\JosueAndroid\Pictures\Fluxme_images
+
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
