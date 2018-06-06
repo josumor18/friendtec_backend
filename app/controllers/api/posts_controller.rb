@@ -27,22 +27,24 @@ module Api
       if(user.auth_token == params[:auth_token])
         amigos = Amigo.where(id_user1: user.id)
 
-        posts = []
-        posts.push(Post.where(id_user: user.id))
-        amigos.each do |item|
-          friendPosts = Post.where(id_user: item.id_user2)
-          if(friendPosts != [])
-            posts.push(friendPosts)
+
+
+        publicaciones = []
+        posts = Post.all
+        posts.each do |item|
+          amigos.each do |item2|
+            if(item2.id_user2 == item.id_user)
+              publicaciones.push(item)
+            end
           end
         end
-
         #---------- Cambiar authentication token ----------
         user.auth_token = nil
         o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
         user.auth_token = (0...20).map { o[rand(o.length)] }.join
         user.save
         #--------------------------------------------------
-        render json: { status: 'SUCCESS', message: 'Posts obtenidos', posts: posts, auth_token: user.auth_token }, status: :ok
+        render json: { status: 'SUCCESS', message: 'Posts obtenidos', posts: publicaciones, auth_token: user.auth_token }, status: :ok
 
       else
         render json: { status: 'INVALID', message: 'Token invalido'}, status: :unauthorized
