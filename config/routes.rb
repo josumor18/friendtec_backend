@@ -6,6 +6,7 @@ Rails.application.routes.draw do
    namespace 'api' do
          post 'users/login', to: 'users#login'
          post 'users/login_token', to: 'users#login_token'
+         get 'users/get_username_foto', to: 'users#get_username_foto'
          post 'posts/create', to: 'posts#create'
          get 'posts/get_friend_posts', to: 'posts#get_friend_posts'
   #       post 'ubicaciones/add', to: 'ubicaciones#add'
