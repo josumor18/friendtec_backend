@@ -36,9 +36,11 @@ module Api
       end
 
       def get_username_foto
-        user = User.where(id: params[:id_user])
+        user = User.where(id: params[:id_user]).first
         if(user)
           render json: { status: 'SUCCESS', message: 'DATOS OBTENIDOS', username: user.nombre, foto: user.rfoto }, status: :ok
+        else
+          render json: { status: 'INVALID', message: 'Error al obtener los datos de usuario'}, status: :unauthorized
         end
       end
     end
