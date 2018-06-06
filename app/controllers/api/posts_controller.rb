@@ -27,7 +27,8 @@ module Api
       if(user.auth_token == params[:auth_token])
         amigos = Amigo.where(id_user1: user.id)
 
-        posts = Post.where(id_user: user.id)
+        posts = []
+        posts.push(Post.where(id_user: user.id))
         amigos.each do |item|
           friendPosts = Post.where(id_user: item.id_user2)
           if(friendPosts != [])
