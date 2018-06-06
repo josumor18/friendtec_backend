@@ -10,7 +10,7 @@ Rails.application.routes.draw do
          post 'posts/create', to: 'posts#create'
          get 'posts/get_friend_posts', to: 'posts#get_friend_posts'
   #       post 'ubicaciones/add', to: 'ubicaciones#add'
-  #       get 'ubicaciones/get', to: 'ubicaciones#get'
+         get 'amigos/get_amigos', to: 'amigos#get_amigos'
   #       delete 'ubicaciones/del_ubicacion', to: 'ubicaciones#del_ubicacion'
   #       put 'users/change_pass', to: 'users#change_pass'
   #       put 'users/change_user', to: 'users#change_user'
