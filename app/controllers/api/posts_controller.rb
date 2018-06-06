@@ -33,7 +33,7 @@ module Api
         posts = Post.all
         posts.each do |item|
           amigos.each do |item2|
-            if(item2.id_user2 == item.id_user)
+            if(item2.id_user2 == item.id_user || item.id_user == user.id)
               publicaciones.push(item)
             end
           end
