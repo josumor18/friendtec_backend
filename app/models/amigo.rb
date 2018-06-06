@@ -1,0 +1,2 @@
+class Amigo < ApplicationRecord
+end

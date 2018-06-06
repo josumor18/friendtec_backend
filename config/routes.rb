@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
+  resources :amigos
+  resources :posts
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
    namespace 'api' do
-  #     namespace 'v1' do
-  #       #resources :users
          post 'users/login', to: 'users#login'
          post 'users/login_token', to: 'users#login_token'
-  #       post 'users/login_facebook', to: 'users#login_facebook'
-  #       post 'users/register', to: 'users#register'
-  #       get 'emisoras/index', to: 'emisoras#index'
+         post 'posts/create', to: 'posts#create'
+         get 'posts/get_friend_posts', to: 'posts#get_friend_posts'
   #       post 'ubicaciones/add', to: 'ubicaciones#add'
   #       get 'ubicaciones/get', to: 'ubicaciones#get'
   #       delete 'ubicaciones/del_ubicacion', to: 'ubicaciones#del_ubicacion'
