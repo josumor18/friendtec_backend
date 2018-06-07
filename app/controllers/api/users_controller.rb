@@ -43,5 +43,29 @@ module Api
           render json: { status: 'INVALID', message: 'Error al obtener los datos de usuario'}, status: :unauthorized
         end
       end
+
+      def search
+        user = User.where(id: params[:id]).first
+        pass = params[:auth_token]
+        busqueda = params[:busqueda]
+        if (user && user.auth_token == pass)
+          usuarios = User.all
+          resultados = []
+          usuarios.each do |usuario|
+            if(usuario.id != user.id && (((usuario.nombre).downcase).include? busqueda.downcase))
+              resultados.push(usuario)
+            end
+          end
+          #---------- Cambiar authentication token ----------
+          user.auth_token = nil
+          o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
+          user.auth_token = (0...20).map { o[rand(o.length)] }.join
+          user.save
+          #--------------------------------------------------
+          render json: { status: 'SUCCESS', message: 'RESULTADOS OBTENIDOS', resultados: resultados, auth_token: user.auth_token }, status: :ok
+        else
+          render json: { status: 'INVALID', message: 'Error al obtener los resultados de busqueda'}, status: :unauthorized
+        end
+      end
     end
 end
