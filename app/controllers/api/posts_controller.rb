@@ -32,11 +32,16 @@ module Api
         publicaciones = []
         posts = Post.all
         posts.each do |item|
-          amigos.each do |item2|
-            if(item2.id_user2 == item.id_user || item.id_user == user.id)
-              publicaciones.push(item)
+          if(user.id == item.id_user)
+            publicaciones.push(item)
+          else
+            amigos.each do |item2|
+              if(item2.id_user2 == item.id_user)
+                publicaciones.push(item)
+              end
             end
           end
+
         end
         #---------- Cambiar authentication token ----------
         user.auth_token = nil
