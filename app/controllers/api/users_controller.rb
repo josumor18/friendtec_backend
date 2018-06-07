@@ -99,10 +99,7 @@ module Api
             Amigo.where(id_user1: user.id).where(id_user2: params[:id_user2]).destroy_all
             Amigo.where(id_user1: params[:id_user2]).where(id_user2: user.id).destroy_all
           elsif (accion == '2')
-            amigo1 = Amigo.new(id_user1: params[:id], id_user2: params[:id_user2])
-            amigo2 = Amigo.new(id_user1: params[:id_user2], id_user2: params[:id])
-            amigo1.save
-            amigo2.save
+            Solicitud.where(id_user1: user.id).where(id_user2: params[:id_user2]).destroy_all
           end
           render json: { status: 'SUCCESS', message: 'ACCION EXITOSA' }, status: :ok
         else
