@@ -90,15 +90,14 @@ module Api
 
       def search_button
         user = User.where(id: params[:id]).first
-        busqueda = params[:accion]
         if (user)
           accion = params[:accion]
           if (accion == 0)
             solicitud = Solicitud.new(id_user1: params[:id], id_user2: params[:id_user2])
             solicitud.save
           elsif (accion == 1)
-            Amigo.where(id_user1: user.id).where(id_user2: id_user2).destroy_all
-            Amigo.where(id_user1: id_user2).where(id_user2: user.id).destroy_all
+            Amigo.where(id_user1: user.id).where(id_user2: params[:id_user2]).destroy_all
+            Amigo.where(id_user1: params[:id_user2]).where(id_user2: user.id).destroy_all
           elsif (accion == 2)
             amigo1 = Amigo.new(id_user1: params[:id], id_user2: params[:id_user2])
             amigo2 = Amigo.new(id_user1: params[:id_user2], id_user2: params[:id])
