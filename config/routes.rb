@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :solicituds
   resources :amigos
   resources :posts
   resources :users
@@ -10,9 +11,10 @@ Rails.application.routes.draw do
          get 'users/search', to: 'users#search'
          post 'posts/create', to: 'posts#create'
          get 'posts/get_friend_posts', to: 'posts#get_friend_posts'
-  #       post 'ubicaciones/add', to: 'ubicaciones#add'
          get 'amigos/get_amigos', to: 'amigos#get_amigos'
-  #       delete 'ubicaciones/del_ubicacion', to: 'ubicaciones#del_ubicacion'
+         post 'solicituds/create', to: 'solicituds#create'
+         post 'solicituds/aceptar', to: 'solicituds#aceptar'
+         delete 'solicituds/delete', to: 'solicituds#delete'
   #       put 'users/change_pass', to: 'users#change_pass'
   #       put 'users/change_user', to: 'users#change_user'
   #       post 'user_emisoras/setSuscription', to: 'user_emisoras#setSuscription'
