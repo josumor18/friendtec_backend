@@ -52,7 +52,7 @@ module Api
           usuarios = User.all
           resultados = []
           usuarios.each do |usuario|
-            if((usuario.nombre).include? busqueda)
+            if(usuario.id != user.id && (((usuario.nombre).downcase).include? busqueda.downcase))
               resultados.push(usuario)
             end
           end
