@@ -9,6 +9,7 @@ Rails.application.routes.draw do
          post 'users/login_token', to: 'users#login_token'
          get 'users/get_username_foto', to: 'users#get_username_foto'
          get 'users/search', to: 'users#search'
+         post 'users/search_button', to: 'users#search_button'
          post 'posts/create', to: 'posts#create'
          get 'posts/get_friend_posts', to: 'posts#get_friend_posts'
          get 'amigos/get_amigos', to: 'amigos#get_amigos'
