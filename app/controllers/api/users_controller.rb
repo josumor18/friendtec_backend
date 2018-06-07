@@ -51,9 +51,29 @@ module Api
         if (user && user.auth_token == pass)
           usuarios = User.all
           resultados = []
+          estado_amistad = []
           usuarios.each do |usuario|
             if(usuario.id != user.id && (((usuario.nombre).downcase).include? busqueda.downcase))
               resultados.push(usuario)
+
+              # est: Estado de la amistad (0: No amigos; 1: Amigos; 2: Solicitud hecha; 3: Solicitud recibida)
+              est = 0
+              amig = Amigo.where(id_user1: user.id).where(id_user2: usuario.id).first
+              if(amig)
+                est = 1
+              else
+                soli = Solicitud.where(id_user1: user.id).where(id_user2: usuario.id).first
+                if(soli)
+                  est = 2
+                else
+                  soli = Solicitud.where(id_user1: usuario.id).where(id_user2: user.id).first
+                  if(soli)
+                    est = 3
+                  end
+                end
+              end
+
+              estado_amistad.push(est)
             end
           end
           #---------- Cambiar authentication token ----------
@@ -62,7 +82,7 @@ module Api
           user.auth_token = (0...20).map { o[rand(o.length)] }.join
           user.save
           #--------------------------------------------------
-          render json: { status: 'SUCCESS', message: 'RESULTADOS OBTENIDOS', resultados: resultados, auth_token: user.auth_token }, status: :ok
+          render json: { status: 'SUCCESS', message: 'RESULTADOS OBTENIDOS', resultados: resultados, estados_amistad: estado_amistad, auth_token: user.auth_token }, status: :ok
         else
           render json: { status: 'INVALID', message: 'Error al obtener los resultados de busqueda'}, status: :unauthorized
         end
