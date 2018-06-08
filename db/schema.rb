@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180607081215) do
+ActiveRecord::Schema.define(version: 20180608012709) do
 
   create_table "amigos", force: :cascade do |t|
     t.integer  "id_user1"
     t.integer  "id_user2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "id_user"
+    t.integer  "id_friend"
+    t.integer  "id_post"
+    t.boolean  "visto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
