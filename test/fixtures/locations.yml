@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_user: 1
+  latitud: 1.5
+  longitud: 1.5
+
+two:
+  id_user: 1
+  latitud: 1.5
+  longitud: 1.5

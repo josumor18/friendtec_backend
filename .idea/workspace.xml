@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="544e2a04-27d8-47eb-88f3-3eda34d1e8c1" name="Default" comment="" />
+    <list default="true" id="544e2a04-27d8-47eb-88f3-3eda34d1e8c1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/api/locations_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -35,20 +40,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+            <state relative-caret-position="289">
+              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notifications_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="notifications_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/notifications_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+            <state relative-caret-position="356">
+              <caret line="28" column="110" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="110" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="locations_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/locations_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="509">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -56,8 +70,8 @@
       <file leaf-file-name="solicituds_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/solicituds_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-425">
-              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="105" />
+            <state relative-caret-position="17">
+              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="2" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -84,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/api/posts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -117,8 +131,9 @@
         <option value="$PROJECT_DIR$/app/controllers/api/solicituds_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/posts_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/notifications_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api/locations_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -183,7 +198,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="RunAnythingHistoryKey" value="rails generate scaffold Solicitud id_user1:integer id_user2:integer&#9;null&#9;null&#10;rake routes&#9;null&#9;null&#10;rails s&#9;null&#9;null&#10;rails c&#9;null&#9;null&#10;rake c&#9;null&#9;null&#10;rails generate scaffold Amigos id_user1:integer id_user2:integer&#9;null&#9;null&#10;rails generate scaffold Post id_user:integer contenido:string foto:string fecha_hora:datetime&#9;null&#9;null" />
+    <property name="RunAnythingHistoryKey" value="rails generate Location id_user:integer latitud:float longitud:float&#9;null&#9;null&#10;rails generate scaffold Solicitud id_user1:integer id_user2:integer&#9;null&#9;null&#10;rake routes&#9;null&#9;null&#10;rails s&#9;null&#9;null&#10;rails c&#9;null&#9;null&#10;rake c&#9;null&#9;null&#10;rails generate scaffold Amigos id_user1:integer id_user2:integer&#9;null&#9;null&#10;rails generate scaffold Post id_user:integer contenido:string foto:string fecha_hora:datetime&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -198,6 +213,7 @@
       <command value="rails s" />
       <command value="rake routes" />
       <command value="rails generate scaffold Solicitud id_user1:integer id_user2:integer" />
+      <command value="rails generate Location id_user:integer latitud:float longitud:float" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -308,12 +324,12 @@
       <updated>1527661714087</updated>
       <workItem from="1527661715799" duration="17041000" />
       <workItem from="1528273312084" duration="9567000" />
-      <workItem from="1528316517739" duration="24816000" />
+      <workItem from="1528316517739" duration="26655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51424000" />
+    <option name="totallyTimeSpent" value="53263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -492,24 +508,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/posts_controller.erb" />
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/solicituds_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
           <caret line="99" column="89" selection-start-line="98" selection-start-column="12" selection-end-line="99" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -523,14 +525,35 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/api/posts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/solicituds_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="2" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/notifications_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+        <state relative-caret-position="356">
+          <caret line="28" column="110" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/locations_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
         </state>
       </provider>
     </entry>
