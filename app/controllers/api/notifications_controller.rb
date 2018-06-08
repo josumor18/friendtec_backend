@@ -24,9 +24,9 @@ module Api
           notif.save
         end
 
-      #  render json: { status: 'SUCCESS', message: 'Notificaciones modificadas'}, status: :ok
-      #else
-      #  render json: { status: 'INVALID', message: 'Error al modificar notificaciones'}, status: :unauthorized
+        render json: { status: 'SUCCESS', message: 'Notificaciones modificadas'}, status: :ok
+      else
+        render json: { status: 'INVALID', message: 'Error al modificar notificaciones'}, status: :unauthorized
       end
     end
   end
