@@ -6,10 +6,9 @@ module Api
       user = User.where(id: params[:id]).first
 
       if(user)
-        Notification.order("created_at DESC")
         notifi = []
         notif = Notification.where(id_user: user.id)
-        
+        notif.order("created_at DESC")
         render json: { status: 'SUCCESS', message: 'Notificaciones obtenidas', notificaciones: notif}, status: :ok
       else
         render json: { status: 'INVALID', message: 'Error al obtener notificaciones'}, status: :unauthorized
