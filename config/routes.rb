@@ -18,7 +18,7 @@ Rails.application.routes.draw do
          post 'solicituds/aceptar', to: 'solicituds#aceptar'
          delete 'solicituds/delete', to: 'solicituds#delete'
          get 'notifications/get', to: 'notifications#get'
-  #       put 'users/change_pass', to: 'users#change_pass'
+         put 'notifications/set_false', to: 'notifications/set_false'
   #       put 'users/change_user', to: 'users#change_user'
   #       post 'user_emisoras/setSuscription', to: 'user_emisoras#setSuscription'
   #       post 'trendings/add', to: 'trendings#add'
