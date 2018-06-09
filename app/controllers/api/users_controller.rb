@@ -116,7 +116,7 @@ module Api
           user.save
           user.update(:nombre=>params[:name])
           user.update(:email=>params[:email])
-          render json: { status: 'SUCCESS', message: 'CAMBIO EXITOSO',authentication_token:user.authentication_token}, status: :ok
+          render json: { status: 'SUCCESS', message: 'CAMBIO EXITOSO',authentication_token:user.auth_token}, status: :ok
         else
           render json: { status: 'INVALID TOKEN', message: 'Token inválido'}, status: :unauthorized
           
