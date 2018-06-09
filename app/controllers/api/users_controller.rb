@@ -106,7 +106,6 @@ module Api
           render json: { status: 'INVALID', message: 'Error al obtener los resultados de busqueda'}, status: :unauthorized
         end
       end
-    end
 
     def register
         user = User.new(user_params)
@@ -123,5 +122,8 @@ module Api
       def user_params
         params.permit(:carnet, :carrera, :nombre, :email, :password)
       end
+      
+    end
+
 
 end
