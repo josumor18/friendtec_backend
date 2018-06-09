@@ -108,22 +108,38 @@ module Api
       end
 
     def register
-        user = User.new(user_params)
-        if user.save
-          render json: { status: 'SUCCESS', message: 'USUARIO REGISTRADO', data:user }, status: :created
-        elsif user = User.where(carnet: params[:carnet]).first
-          render json: { status: 'ERROR', message: 'USUARIO EXISTENTE' }, status: :unauthorized
+      user = User.new(user_params)
+      if user.save
+        render json: { status: 'SUCCESS', message: 'USUARIO REGISTRADO', data:user }, status: :created
+      elsif user = User.where(carnet: params[:carnet]).first
+        render json: { status: 'ERROR', message: 'USUARIO EXISTENTE' }, status: :unauthorized
+      else
+        render json: { status: 'ERROR', message: 'USUARIO NO CREADO' }, status: :bad
+      end
+    end
+
+    private
+    def user_params
+      params.permit(:carnet, :carrera, :nombre, :email, :password)
+    end
+
+    def change_user
+        user = user = User.where(id: params[:id]).first
+        token = params[:authentication_token]
+
+        if (user&.authentication_token==token)
+          user.authentication_token = nil
+          user.save
+          user.update(:nombre=>params[:name])
+          user.update(:email=>params[:email])
+          render json: { status: 'SUCCESS', message: 'CAMBIO EXITOSO',authentication_token:user.authentication_token}, status: :ok
         else
-          render json: { status: 'ERROR', message: 'USUARIO NO CREADO' }, status: :bad
+          render json: { status: 'INVALID TOKEN', message: 'Token inválido'}, status: :unauthorized
+          
         end
       end
-
-      private
-      def user_params
-        params.permit(:carnet, :carrera, :nombre, :email, :password)
-      end
       
-    end
+  end
 
 
 end
