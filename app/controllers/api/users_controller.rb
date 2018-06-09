@@ -111,8 +111,8 @@ module Api
         user = user = User.where(id: params[:id]).first
         token = params[:authentication_token]
 
-        if (user&.authentication_token==token)
-          user.authentication_token = nil
+        if (user&.auth_token==token)
+          user.auth_token = nil
           user.save
           user.update(:nombre=>params[:name])
           user.update(:email=>params[:email])
