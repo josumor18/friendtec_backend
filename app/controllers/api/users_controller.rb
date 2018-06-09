@@ -112,8 +112,12 @@ module Api
         token = params[:authentication_token]
 
         if (user&.auth_token==token)
+          #---------- Cambiar authentication token ----------
           user.auth_token = nil
+          o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
+          user.auth_token = (0...20).map { o[rand(o.length)] }.join
           user.save
+          #--------------------------------------------------
           user.update(:nombre=>params[:name])
           user.update(:email=>params[:email])
           render json: { status: 'SUCCESS', message: 'CAMBIO EXITOSO',authentication_token:user.auth_token}, status: :ok
