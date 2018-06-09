@@ -107,6 +107,22 @@ module Api
         end
       end
 
+      def change_user
+        user = user = User.where(id: params[:id]).first
+        token = params[:authentication_token]
+
+        if (user&.authentication_token==token)
+          user.authentication_token = nil
+          user.save
+          user.update(:nombre=>params[:name])
+          user.update(:email=>params[:email])
+          render json: { status: 'SUCCESS', message: 'CAMBIO EXITOSO',authentication_token:user.authentication_token}, status: :ok
+        else
+          render json: { status: 'INVALID TOKEN', message: 'Token inválido'}, status: :unauthorized
+          
+        end
+      end
+
       def register
         user = User.new(user_params)
         if user.save
@@ -123,21 +139,7 @@ module Api
         params.permit(:carnet, :carrera, :nombre, :email, :password)
       end
 
-      def change_user
-        user = user = User.where(id: params[:id]).first
-        token = params[:authentication_token]
-
-        if (user&.authentication_token==token)
-          user.authentication_token = nil
-          user.save
-          user.update(:nombre=>params[:name])
-          user.update(:email=>params[:email])
-          render json: { status: 'SUCCESS', message: 'CAMBIO EXITOSO',authentication_token:user.authentication_token}, status: :ok
-        else
-          render json: { status: 'INVALID TOKEN', message: 'Token inválido'}, status: :unauthorized
-          
-        end
-      end
+      
       
     end
 
