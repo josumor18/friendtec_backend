@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations
   resources :notifications
   resources :solicituds
   resources :amigos
@@ -19,6 +20,8 @@ Rails.application.routes.draw do
          delete 'solicituds/delete', to: 'solicituds#delete'
          get 'notifications/get', to: 'notifications#get'
          put 'notifications/set_false', to: 'notifications#set_false'
+         get 'locations/get_friends_locations', to: 'locations#get_friends_locations'
+         post 'locations/create', to: 'locations#create'
   #       put 'users/change_user', to: 'users#change_user'
   #       post 'user_emisoras/setSuscription', to: 'user_emisoras#setSuscription'
   #       post 'trendings/add', to: 'trendings#add'
