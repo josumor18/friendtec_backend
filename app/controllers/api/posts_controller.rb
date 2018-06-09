@@ -4,29 +4,27 @@ module Api
 
     def create
       user = User.where(id: params[:id]).first
-      if(user.auth_token == params[:auth_token])
-        post = Post.new(id_user: params[:id], contenido: params[:contenido], foto: params[:foto], fecha_hora: params[:fecha_hora])
-        if (post.save)
-          amigos = Amigo.where(id_user1: user.id)
+      
+      post = Post.new(id_user: params[:id], contenido: params[:contenido], foto: params[:foto], fecha_hora: params[:fecha_hora])
+      if (post.save)
+        amigos = Amigo.where(id_user1: user.id)
 
-          amigos.each do |amigo|
-            notif = Notification.new(id_user: amigo.id_user2, id_friend: user.id, id_post: post.id, visto: false)
-            notif.save
-          end
-
-          #---------- Cambiar authentication token ----------
-          user.auth_token = nil
-          o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
-          user.auth_token = (0...20).map { o[rand(o.length)] }.join
-          user.save
-          #--------------------------------------------------
-          render json: { status: 'SUCCESS', message: 'Post creado', auth_token: user.auth_token }, status: :ok
-        else
-          render json: { status: 'INVALID', message: 'Error al guardar post'}, status: :unauthorized
+        amigos.each do |amigo|
+          notif = Notification.new(id_user: amigo.id_user2, id_friend: user.id, id_post: post.id, visto: false)
+          notif.save
         end
+
+        #---------- Cambiar authentication token ----------
+        #user.auth_token = nil
+        #o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
+        #user.auth_token = (0...20).map { o[rand(o.length)] }.join
+        #user.save
+        #--------------------------------------------------
+        render json: { status: 'SUCCESS', message: 'Post creado'}, status: :ok
       else
-        render json: { status: 'INVALID', message: 'Token invalido'}, status: :unauthorized
+        render json: { status: 'INVALID', message: 'Error al guardar post'}, status: :unauthorized
       end
+      
     end
 
     def get_friend_posts
