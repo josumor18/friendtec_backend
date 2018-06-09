@@ -107,4 +107,21 @@ module Api
         end
       end
     end
+
+    def register
+        user = User.new(user_params)
+        if user.save
+          render json: { status: 'SUCCESS', message: 'USUARIO REGISTRADO', data:user }, status: :created
+        elsif user = User.where(carnet: params[:carnet]).first
+          render json: { status: 'ERROR', message: 'USUARIO EXISTENTE' }, status: :unauthorized
+        else
+          render json: { status: 'ERROR', message: 'USUARIO NO CREADO' }, status: :bad
+        end
+      end
+
+      private
+      def user_params
+        params.permit(:carnet, :carrera, :nombre, :email, :password)
+      end
+
 end

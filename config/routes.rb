@@ -22,6 +22,8 @@ Rails.application.routes.draw do
          put 'notifications/set_false', to: 'notifications#set_false'
          get 'locations/get_friends_locations', to: 'locations#get_friends_locations'
          post 'locations/create', to: 'locations#create'
+         post 'users/register', to: 'users#register'
+
   #       put 'users/change_user', to: 'users#change_user'
   #       post 'user_emisoras/setSuscription', to: 'user_emisoras#setSuscription'
   #       post 'trendings/add', to: 'trendings#add'
