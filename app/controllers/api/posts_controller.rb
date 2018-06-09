@@ -20,7 +20,7 @@ module Api
         #user.auth_token = (0...20).map { o[rand(o.length)] }.join
         #user.save
         #--------------------------------------------------
-        render json: { status: 'SUCCESS', message: 'Post creado'}, status: :ok
+        render json: { status: 'SUCCESS', message: 'Post creado'}, status: :created
       else
         render json: { status: 'INVALID', message: 'Error al guardar post'}, status: :unauthorized
       end
