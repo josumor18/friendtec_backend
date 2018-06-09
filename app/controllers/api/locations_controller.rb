@@ -8,7 +8,7 @@ module Api
         locations = []
         amigos = Amigo.where(id_user1: user.id)
         amigos.each do |amigo|
-          location = Location.where(id_user: amigo.id_user).first
+          location = Location.where(id_user: amigo.id_user2).first
           if(location)
             locations.push(location)
           end
