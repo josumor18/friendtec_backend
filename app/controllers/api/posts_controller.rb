@@ -60,5 +60,21 @@ module Api
         render json: { status: 'INVALID', message: 'Token invalido'}, status: :unauthorized
       end
     end
+
+    def get_posts
+      user = User.where(id: params[:id]).first
+      
+      publicaciones = []
+      posts = Post.all
+      posts.each do |item|
+        if(user.id == item.id_user)
+          publicaciones.push(item)
+        end
+
+      end
+      
+      render json: { status: 'SUCCESS', message: 'Posts obtenidos', posts: publicaciones, auth_token: user.auth_token }, status: :ok
+    end
+
   end
 end
