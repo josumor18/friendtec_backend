@@ -127,6 +127,36 @@ module Api
         end
       end
 
+      def change_pass
+        user = User.where(id: params[:id]).first
+        token = params[:authentication_token]
+        pass = params[:password]
+
+        if (user&.auth_token==token)
+          
+          if (user&.valid_password?(pass))
+            #update
+            #---------- Cambiar authentication token ----------
+            user.auth_token = nil
+            o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
+            user.auth_token = (0...20).map { o[rand(o.length)] }.join
+            user.save
+            #--------------------------------------------------
+            
+            user.update(:password=>params[:new_password])
+
+            render json: { status: 'SUCCESS', message: 'CAMBIO EXITOSO', authentication_token:user.authentication_token}, status: :ok
+          
+          else
+            render json: { status: 'INVALID', message: 'Contraseña Incorrecta'}, status: :unauthorized
+
+          end
+        else
+          render json: { status: 'INVALID TOKEN', message: 'Token inválido'}, status: :unauthorized
+        end
+
+      end
+
       def register
         user = User.new(user_params)
         if user.save
