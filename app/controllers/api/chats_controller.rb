@@ -16,18 +16,14 @@ module Api
     end
 
     def set_true
-      user = User.where(id: params[:id]).first
+      chat = User.where(id: params[:id_chat]).first
 
-      if(user)
-        chats = Chat.where(id_user: user.id)
-        chats.each do |chat|
-          chat.visto = true
-          chat.save
-        end
-
-        render json: { status: 'SUCCESS', message: 'Notificaciones modificadas'}, status: :ok
+      if(chat)
+        chat.visto = true
+        chat.save
+        render json: { status: 'SUCCESS', message: 'Chats modificado'}, status: :ok
       else
-        render json: { status: 'INVALID', message: 'Error al modificar notificaciones'}, status: :unauthorized
+        render json: { status: 'INVALID', message: 'Error al modificar estado del chat'}, status: :unauthorized
       end
     end
   end
