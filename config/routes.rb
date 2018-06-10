@@ -24,6 +24,7 @@ Rails.application.routes.draw do
          post 'locations/create', to: 'locations#create'
          post 'users/register', to: 'users#register'
          put 'users/change_user', to: 'users#change_user'
+         put 'users/change_pass', to: 'users#change_pass'
          get 'posts/get_posts', to: 'posts#get_posts'
 
 
