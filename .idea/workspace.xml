@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="544e2a04-27d8-47eb-88f3-3eda34d1e8c1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/api/chats_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-    </list>
+    <list default="true" id="544e2a04-27d8-47eb-88f3-3eda34d1e8c1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -40,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="306">
+              <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -67,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chats_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chats_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/chats_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
@@ -124,8 +119,8 @@
         <option value="$PROJECT_DIR$/app/controllers/api/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/notifications_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/locations_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/chats_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -195,7 +190,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="RunAnythingHistoryKey" value="rails generate Location id_user:integer latitud:float longitud:float&#9;null&#9;null&#10;rails generate scaffold Solicitud id_user1:integer id_user2:integer&#9;null&#9;null&#10;rake routes&#9;null&#9;null&#10;rails s&#9;null&#9;null&#10;rails c&#9;null&#9;null&#10;rake c&#9;null&#9;null&#10;rails generate scaffold Amigos id_user1:integer id_user2:integer&#9;null&#9;null&#10;rails generate scaffold Post id_user:integer contenido:string foto:string fecha_hora:datetime&#9;null&#9;null" />
+    <property name="RunAnythingHistoryKey" value="rails s&#9;null&#9;null&#10;rails generate Location id_user:integer latitud:float longitud:float&#9;null&#9;null&#10;rails generate scaffold Solicitud id_user1:integer id_user2:integer&#9;null&#9;null&#10;rake routes&#9;null&#9;null&#10;rails c&#9;null&#9;null&#10;rake c&#9;null&#9;null&#10;rails generate scaffold Amigos id_user1:integer id_user2:integer&#9;null&#9;null&#10;rails generate scaffold Post id_user:integer contenido:string foto:string fecha_hora:datetime&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -208,10 +203,10 @@
       <command value="rails generate scaffold Amigos id_user1:integer id_user2:integer" />
       <command value="rake c" />
       <command value="rails c" />
-      <command value="rails s" />
       <command value="rake routes" />
       <command value="rails generate scaffold Solicitud id_user1:integer id_user2:integer" />
       <command value="rails generate Location id_user:integer latitud:float longitud:float" />
+      <command value="rails s" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -343,20 +338,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58543000" />
+    <option name="totallyTimeSpent" value="59376000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2607313" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2607313" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -643,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/amigos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -689,6 +677,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
         </state>
       </provider>
     </entry>

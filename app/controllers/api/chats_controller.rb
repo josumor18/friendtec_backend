@@ -6,7 +6,7 @@ module Api
       user = User.where(id: params[:id]).first
 
       if(user)
-        chats = Chats.where(id_user: user.id)
+        chats = Chat.where(id_user: user.id)
 
         chats.order("created_at DESC")
         render json: { status: 'SUCCESS', message: 'Chats obtenidos', chats: chats}, status: :ok
