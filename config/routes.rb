@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :chats
   resources :messages
+  resources :chats
   resources :locations
   resources :notifications
   resources :solicituds

@@ -3,7 +3,9 @@
 one:
   id_chat: 1
   message: MyString
+  enviado: false
 
 two:
   id_chat: 1
   message: MyString
+  enviado: false
