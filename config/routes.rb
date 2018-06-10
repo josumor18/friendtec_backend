@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :chats
+  resources :messages
   resources :locations
   resources :notifications
   resources :solicituds
@@ -25,7 +27,8 @@ Rails.application.routes.draw do
          post 'users/register', to: 'users#register'
          put 'users/change_user', to: 'users#change_user'
          get 'posts/get_posts', to: 'posts#get_posts'
-
+         get 'chats/get', to: 'chats#get'
+         put 'chats/set_true', to: 'chats#set_true'
 
   #       put 'users/change_user', to: 'users#change_user'
   #       post 'user_emisoras/setSuscription', to: 'user_emisoras#setSuscription'
