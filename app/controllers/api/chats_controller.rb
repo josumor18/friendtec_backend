@@ -26,5 +26,21 @@ module Api
         render json: { status: 'INVALID', message: 'Error al modificar estado del chat'}, status: :unauthorized
       end
     end
+
+    ######################## MESSAGES MANAGEMENT ########################
+    def get_chat_messages
+      chat = User.where(id: params[:id_chat]).first
+
+      if(chat)
+
+        mensajes = Message.where(id_chat: chat.id)
+        mensajes.order("created_at ASC")
+        chat.visto = true
+        chat.save
+        render json: { status: 'SUCCESS', message: 'Chats modificado', mensajes: mensajes}, status: :ok
+      else
+        render json: { status: 'INVALID', message: 'Error al modificar estado del chat'}, status: :unauthorized
+      end
+    end
   end
 end

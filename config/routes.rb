@@ -29,6 +29,7 @@ Rails.application.routes.draw do
          get 'posts/get_posts', to: 'posts#get_posts'
          get 'chats/get', to: 'chats#get'
          put 'chats/set_true', to: 'chats#set_true'
+         get 'chats/get_chat_messages', to: 'chats#get_chat_messages'
 
   #       put 'users/change_user', to: 'users#change_user'
   #       post 'user_emisoras/setSuscription', to: 'user_emisoras#setSuscription'
