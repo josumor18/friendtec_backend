@@ -22,6 +22,25 @@ module Api
       end
     end
 
+    def get
+      user = User.where(id: params[:id]).first
+      if(user)
+        solicitudes = Solicitud.where(id_user1: user.id)
+
+        lista_solicitudes = []
+        solicitudes.each do |solicitud|
+          usuario = User.where(id: solicitud.id_user2).first
+          if(usuario)
+            lista_solicitudes.push(usuario)
+          end
+        end
+        render json: { status: 'SUCCESS', message: 'Solicitudes obtenidas', solicitudes: lista_solicitudes}, status: :ok
+
+      else
+        render json: { status: 'INVALID', message: 'Error al obtener las solicitudes'}, status: :unauthorized
+      end
+    end
+
     def aceptar
       user = User.where(id: params[:id]).first
       if(user.auth_token == params[:auth_token])
