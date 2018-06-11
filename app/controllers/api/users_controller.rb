@@ -173,6 +173,17 @@ module Api
         params.permit(:carnet, :carrera, :nombre, :email, :password)
       end
 
+      def update_image
+        user = User.where(id: params[:id]).first
+        if(user)
+          user.foto = params[:f1]
+          user.rfoto = params[:f2]
+          user.save
+          render json: { status: 'SUCCESS', message: 'USUARIO MODIFICADO (fotos)' }, status: :ok
+        else
+          render json: { status: 'SUCCESS', message: 'USUARIO NO MODIFICADO'}, status: :unauthorized
+        end
+      end
       
       
     end
