@@ -32,5 +32,7 @@ Rails.application.routes.draw do
          put 'chats/set_true', to: 'chats#set_true'
          get 'chats/get_chat_messages', to: 'chats#get_chat_messages'
          post 'chats/send_message', to: 'chats#send_message'
+         get 'solicituds/get', to: 'solicituds#get'
+
      end
 end
