@@ -71,7 +71,7 @@ module Api
           men1.save
           men2.save
         end
-        render json: { status: 'SUCCESS', message: 'Mensaje enviado' }, status: :ok
+        render json: { status: 'SUCCESS', message: 'Mensaje enviado', id_chat: chat1.id }, status: :ok
       else
         render json: { status: 'INVALID', message: 'Error al enviar mensaje'}, status: :unauthorized
       end
