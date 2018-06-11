@@ -47,7 +47,7 @@ module Api
         amigo1 = Amigo.new(id_user1: params[:id], id_user2: params[:id_user2])
         amigo2 = Amigo.new(id_user1: params[:id_user2], id_user2: params[:id])
         if (amigo1.save && amigo2.save)
-          Solicitud.where(id_user2: user.id).where(id_user1: id_user2).destroy_all
+          Solicitud.where(id_user2: user.id).where(id_user1: params[:id_user2]).destroy_all
           #---------- Cambiar authentication token ----------
           user.auth_token = nil
           o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
@@ -66,7 +66,7 @@ module Api
     def delete
       user = User.where(id: params[:id]).first
       if(user.auth_token == params[:auth_token])
-        Solicitud.where(id_user2: user.id).where(id_user1: id_user2).destroy_all
+        Solicitud.where(id_user2: user.id).where(id_user1: params[:id_user2]).destroy_all
         #---------- Cambiar authentication token ----------
         user.auth_token = nil
         o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
