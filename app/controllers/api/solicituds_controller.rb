@@ -25,11 +25,11 @@ module Api
     def get
       user = User.where(id: params[:id]).first
       if(user)
-        solicitudes = Solicitud.where(id_user1: user.id)
+        solicitudes = Solicitud.where(id_user2: user.id)
 
         lista_solicitudes = []
         solicitudes.each do |solicitud|
-          usuario = User.where(id: solicitud.id_user2).first
+          usuario = User.where(id: solicitud.id_user1).first
           if(usuario)
             lista_solicitudes.push(usuario)
           end
