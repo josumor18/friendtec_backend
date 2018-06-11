@@ -33,6 +33,6 @@ Rails.application.routes.draw do
          get 'chats/get_chat_messages', to: 'chats#get_chat_messages'
          post 'chats/send_message', to: 'chats#send_message'
          get 'solicituds/get', to: 'solicituds#get'
-
+         put 'users/update_image', to: 'users#update_image'
      end
 end

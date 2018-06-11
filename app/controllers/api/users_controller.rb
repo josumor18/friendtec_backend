@@ -108,10 +108,10 @@ module Api
       end
 
       def change_user
-        user = user = User.where(id: params[:id]).first
+        user = User.where(id: params[:id]).first
         token = params[:authentication_token]
 
-        if (user&.auth_token==token)
+        if (user && user.auth_token==token)
           #---------- Cambiar authentication token ----------
           user.auth_token = nil
           o = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
@@ -132,9 +132,9 @@ module Api
         token = params[:authentication_token]
         pass = params[:password]
 
-        if (user&.auth_token==token)
+        if (user && user.auth_token==token)
           
-          if (user&.valid_password?(pass))
+          if (user.password == pass)
             #update
             #---------- Cambiar authentication token ----------
             user.auth_token = nil
@@ -157,6 +157,18 @@ module Api
 
       end
 
+      def update_image
+        user = User.where(id: params[:id]).first
+        if(user)
+          user.foto = params[:f1]
+          user.rfoto = params[:f2]
+          user.save
+          render json: { status: 'SUCCESS', message: 'USUARIO MODIFICADO (fotos)' }, status: :ok
+        else
+          render json: { status: 'SUCCESS', message: 'USUARIO NO MODIFICADO'}, status: :unauthorized
+        end
+      end
+
       def register
         user = User.new(user_params)
         if user.save
@@ -172,7 +184,6 @@ module Api
       def user_params
         params.permit(:carnet, :carrera, :nombre, :email, :password)
       end
-
       
       
     end
